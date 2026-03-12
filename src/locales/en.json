@@ -1,0 +1,148 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "cancel": "Cancel",
+    "back": "Back to list",
+    "retry": "Retry"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "devMode": {
+    "label": "Dev Mode"
+  },
+  "roles": {
+    "admin": "Admin",
+    "developer": "Developer",
+    "designer": "Designer",
+    "selectRole": "Assign Role",
+    "currentRole": "Current role",
+    "assign": "Assign",
+    "assigned": "Assigned"
+  },
+  "apiTokenError": {
+    "title": "API Token Required",
+    "subtitle": "Configuration error - Please set up your API token",
+    "missing": "Missing VITE_API_TOKEN",
+    "description": "The application requires an API token to communicate with the backend service. This token must be configured in your environment variables.",
+    "howToFix": "How to fix this:",
+    "step1": {
+      "title": "Open the .env file",
+      "description": "Locate the .env file in the root directory of your project."
+    },
+    "step2": {
+      "title": "Add your API token",
+      "description": "Add or update the VITE_API_TOKEN variable with your API token:"
+    },
+    "step3": {
+      "title": "Restart the development server",
+      "description": "Stop and restart your development server for the changes to take effect."
+    },
+    "visitDocs": "Visit ReqRes documentation"
+  },
+  "errorBoundary": {
+    "title": "Oops! Something went wrong",
+    "subtitle": "An unexpected error occurred in the application",
+    "errorMessage": "Error message",
+    "unknownError": "Unknown error",
+    "showDetails": "Show technical details",
+    "hideDetails": "Hide technical details",
+    "stackTrace": "Stack trace",
+    "noStackTrace": "No stack trace available",
+    "suggestions": "What you can do:",
+    "tryAgain": "Try again",
+    "goHome": "Go to home",
+    "persistsMessage": "If the problem persists, please contact support or try again later."
+  },
+  "commandPalette": {
+    "label": "Command palette",
+    "placeholder": "Search actions, users...",
+    "noResults": "No results found",
+    "quickActions": "Quick Actions",
+    "createUser": "Create new user",
+    "goHome": "Go to home",
+    "users": "Users",
+    "theme": "Theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "language": "Language",
+    "navigate": "Navigate",
+    "select": "Select",
+    "close": "Close"
+  },
+  "userList": {
+    "title": "Users",
+    "createUser": "Create User",
+    "filterByRole": "Filter by role",
+    "allRoles": "All",
+    "previous": "Previous",
+    "next": "Next",
+    "previousPage": "Go to previous page",
+    "nextPage": "Go to next page",
+    "page": "Page",
+    "searchLabel": "Search users by name or email",
+    "clearSearch": "Clear search",
+    "viewUser": "View user",
+    "errorLoading": "Error loading users",
+    "noUsers": "No users found",
+    "noUsersDescription": "No users were found. Start by creating your first user.",
+    "searchPlaceholder": "Search by name or email...",
+    "noResults": "No results found",
+    "noResultsDescription": "No users match your search. Try different terms."
+  },
+  "userDetail": {
+    "title": "User Information",
+    "previous": "Previous",
+    "next": "Next",
+    "previousUser": "Go to previous user",
+    "nextUser": "Go to next user",
+    "edit": "Edit User",
+    "delete": "Delete User",
+    "deleting": "Deleting...",
+    "notFound": "User not found",
+    "fields": {
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email"
+    }
+  },
+  "userForm": {
+    "createTitle": "Create New User",
+    "editTitle": "Edit User",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "firstNamePlaceholder": "Enter first name",
+    "lastNamePlaceholder": "Enter last name",
+    "emailPlaceholder": "example@email.com",
+    "required": "This field is required",
+    "minLength": "{{field}} must be at least {{length}} characters",
+    "invalidEmail": "Invalid email",
+    "create": "Create User",
+    "update": "Update User",
+    "creating": "Creating...",
+    "updating": "Updating..."
+  },
+  "deleteDialog": {
+    "title": "Confirm deletion",
+    "description": "Are you sure you want to delete",
+    "warning": "This action cannot be undone.",
+    "confirm": "Delete"
+  },
+  "toast": {
+    "userCreated": "User created successfully. Note: This is a test API, the user has not been actually saved.",
+    "userUpdated": "User updated successfully. Note: This is a test API, the changes have not been actually saved.",
+    "userDeleted": "User deleted successfully. Note: This is a test API, the user has not been actually deleted.",
+    "errorCreate": "Error creating user",
+    "errorUpdate": "Error updating user",
+    "errorDelete": "Error deleting user",
+    "errorLoad": "Error loading user"
+  },
+  "errors": {
+    "rateLimitTitle": "Rate Limit Reached",
+    "rateLimitMessage": "You have reached the public API request limit. Please wait a few minutes before trying again.",
+    "rateLimitAction": "Visit ReqRes to get an API key"
+  }
+}

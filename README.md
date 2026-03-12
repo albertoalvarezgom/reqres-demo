@@ -1,33 +1,112 @@
-# Aplicación CRUD de Usuarios - React + TypeScript
+# 👥 Gestor de Usuarios - Demo ReqRes
 
-Aplicación web desarrollada con React y TypeScript que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre usuarios utilizando la API REST de [reqres.in](https://reqres.in/).
+Aplicación web moderna para la gestión de usuarios construida con React, TypeScript y Vite. Integra la API de [ReqRes](https://reqres.in/) con funcionalidades avanzadas de filtrado, asignación de roles y modo de desarrollo.
 
-## 🚀 Características
+## ✨ Características Principales
 
-- ✅ **Listado de usuarios** con paginación
-- ✅ **Visualización detallada** de información de usuario
-- ✅ **Creación de nuevos usuarios**
-- ✅ **Edición de usuarios existentes**
-- ✅ **Eliminación de usuarios**
-- ✅ **Validación de formularios**
-- ✅ **Diseño responsive** (adaptado para desktop y móvil)
-- ✅ **Interfaz moderna** con Tailwind CSS
-- ✅ **Navegación con React Router**
-- ✅ **TypeScript** para type safety
+### 🎯 Gestión de Usuarios
+- **Listado de usuarios** con paginación
+- **Búsqueda en tiempo real** por nombre y email
+- **Filtrado por roles** (Admin, Developer, Designer)
+- **Creación de nuevos usuarios**
+- **Edición de usuarios existentes**
+- **Eliminación de usuarios** con confirmación
+- **Vista detallada** de cada usuario
 
-## 🛠️ Tecnologías Utilizadas
+### 🎨 Asignación de Roles
+- **Selector de roles visual** con iconos
+- Asignación desde la lista de usuarios (modo compacto)
+- Asignación desde el detalle del usuario (modo completo)
+- Asignación durante la creación/edición de usuarios
+- **Persistencia en localStorage**
+- Tooltips informativos en modo compacto
 
-- **React 19.2** - Framework de UI
-- **TypeScript 5.9** - Tipado estático
-- **Vite 7.3** - Build tool y dev server
-- **React Router DOM 6.22** - Enrutamiento
-- **Tailwind CSS 3.4** - Framework CSS para estilos
-- **reqres.in API** - API REST para datos de usuarios
+### 🔍 Sistema de Filtrado
+- Búsqueda por nombre y email con debounce
+- Filtrado por roles con botones interactivos
+- Combinación de filtros (búsqueda + rol)
+- Interfaz responsive en una sola fila
+
+### 🌐 Internacionalización (i18n)
+- **3 idiomas soportados**: Español, Inglés, Galego
+- Cambio de idioma en tiempo real
+- Traducciones completas en toda la aplicación
+- Accesible desde la paleta de comandos
+
+### 🎨 Temas y UI
+- **Modo claro y oscuro** con persistencia
+- Diseño moderno con **shadcn/ui**
+- Estilizado con **Tailwind CSS**
+- Animaciones suaves y transiciones
+- Componentes accesibles (ARIA)
+- Diseño totalmente responsive
+
+### ⚡ Paleta de Comandos
+- Acceso rápido con `Ctrl+K` / `Cmd+K`
+- Navegación rápida a usuarios
+- Cambio de tema
+- Cambio de idioma
+- Creación rápida de usuarios
+
+### 🛠️ Modo de Desarrollo
+- **Mock data** para desarrollo offline
+- Indicador visual de modo dev
+- Configuración mediante variable de entorno
+- Servicios mock completos (CRUD)
+
+### 🔒 Validación y Manejo de Errores
+- Validación de formularios con **Zod**
+- Mensajes de error personalizados
+- Manejo de rate limiting
+- Validación de token API
+- Notificaciones toast con **Sonner**
+
+### ♿ Accesibilidad
+- Skip to content link
+- Etiquetas ARIA apropiadas
+- Navegación por teclado
+- Contraste de colores adecuado
+
+## 🚀 Stack Tecnológico
+
+### Frontend Framework
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y dev server
+
+### Routing y Estado
+- **React Router v6** - Enrutamiento
+- **TanStack Query (React Query)** - Gestión de estado del servidor
+- **React Hook Form** - Gestión de formularios
+
+### UI y Estilos
+- **shadcn/ui** - Componentes UI
+- **Tailwind CSS** - Utility-first CSS
+- **Radix UI** - Primitivos accesibles
+- **Lucide React** - Iconos
+
+### Validación y Utilidades
+- **Zod** - Validación de esquemas
+- **clsx** - Utilidad para clases CSS
+- **tailwind-merge** - Merge de clases Tailwind
+
+### Internacionalización
+- **react-i18next** - Framework i18n
+- **i18next** - Core i18n
+
+### Notificaciones
+- **Sonner** - Sistema de toasts
+
+### Calidad de Código
+- **ESLint** - Linter
+- **Prettier** - Formateador de código
+- **Husky** - Git hooks
+- **lint-staged** - Linting en archivos staged
 
 ## 📋 Requisitos Previos
 
-- Node.js (versión 16 o superior)
-- npm, yarn o pnpm
+- **Node.js** >= 18.0.0
+- **pnpm** (recomendado) o npm
 
 ## 🔧 Instalación
 
@@ -39,127 +118,149 @@ cd demo-berto
 
 2. **Instalar dependencias**
 ```bash
-npm install
-# o
-yarn install
-# o
 pnpm install
 ```
 
-## 🚀 Ejecución
+3. **Configurar variables de entorno**
 
-### Modo Desarrollo
+Crea un archivo `.env` en la raíz del proyecto:
+
+```env
+VITE_API_URL=https://reqres.in/api
+VITE_API_TOKEN=tu_token_aqui
+VITE_DEV_MODE=false
+```
+
+**Variables disponibles:**
+- `VITE_API_URL`: URL base de la API de ReqRes
+- `VITE_API_TOKEN`: Token de autenticación (**obligatorio**). Puedes obtenerlo en [https://reqres.in/#authentication](https://reqres.in/#authentication)
+- `VITE_DEV_MODE`: `true` para usar datos mock, `false` para API real
+
+> **⚠️ Importante:** El token de autenticación es **obligatorio** para operar con la aplicación. Sin él, la aplicación mostrará un mensaje de error solicitando que configures el token.
+
+## 🎮 Comandos Disponibles
+
+### Desarrollo
 ```bash
-npm run dev
-# o
-yarn dev
-# o
+# Iniciar servidor de desarrollo
 pnpm dev
+
+# El servidor estará disponible en http://localhost:5173
 ```
 
-La aplicación estará disponible en `http://localhost:5173`
-
-### Compilación para Producción
+### Build
 ```bash
-npm run build
-# o
-yarn build
-# o
+# Crear build de producción
 pnpm build
+
+# Los archivos se generarán en la carpeta /dist
 ```
 
-### Vista Previa de Producción
+### Preview
 ```bash
-npm run preview
-# o
-yarn preview
-# o
+# Previsualizar build de producción
 pnpm preview
+```
+
+### Linting y Formateo
+```bash
+# Ejecutar ESLint
+pnpm lint
+
+# Formatear código con Prettier
+pnpm format
+```
+
+### Testing
+```bash
+# Ejecutar tests (si están configurados)
+pnpm test
 ```
 
 ## 📁 Estructura del Proyecto
 
 ```
 demo-berto/
+├── public/                 # Archivos estáticos
 ├── src/
-│   ├── api/
-│   │   ├── endpoints.ts      # Definición de endpoints de la API
-│   │   └── services.ts       # Servicios para llamadas a la API
-│   ├── components/
-│   │   ├── UserList.tsx      # Componente de listado de usuarios
-│   │   ├── UserDetail.tsx    # Componente de detalle de usuario
-│   │   └── UserForm.tsx      # Componente de formulario (crear/editar)
-│   ├── types/
-│   │   └── user.ts           # Interfaces TypeScript para usuarios
-│   ├── utils/
-│   │   └── constants.ts      # Constantes de configuración
-│   ├── App.tsx               # Componente principal con rutas
-│   ├── App.css               # Estilos globales
-│   ├── index.css             # Estilos base con Tailwind
-│   └── main.tsx              # Punto de entrada
-├── .env                      # Variables de entorno
-├── tailwind.config.js        # Configuración de Tailwind CSS
-├── postcss.config.js         # Configuración de PostCSS
-└── package.json              # Dependencias y scripts
+│   ├── api/               # Servicios API
+│   │   ├── endpoints.ts   # Endpoints de la API
+│   │   └── services.ts    # Funciones de servicio
+│   ├── assets/            # Recursos (imágenes, etc.)
+│   ├── components/        # Componentes React
+│   │   ├── ui/           # Componentes shadcn/ui
+│   │   ├── command-palette/
+│   │   ├── RoleSelector.tsx
+│   │   └── ...
+│   ├── hooks/            # Custom hooks
+│   ├── locales/          # Archivos de traducción
+│   │   ├── en.json       # Inglés
+│   │   ├── es.json       # Español
+│   │   └── gl.json       # Galego
+│   ├── mocks/            # Datos y servicios mock
+│   ├── pages/            # Páginas/Vistas
+│   │   ├── UserList.tsx
+│   │   ├── UserDetail.tsx
+│   │   └── UserForm.tsx
+│   ├── schemas/          # Esquemas de validación Zod
+│   ├── types/            # Tipos TypeScript
+│   ├── utils/            # Utilidades
+│   ├── App.tsx           # Componente principal
+│   ├── main.tsx          # Punto de entrada
+│   └── index.css         # Estilos globales
+├── .env                  # Variables de entorno
+├── .husky/              # Git hooks
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-## 🎯 Funcionalidades Implementadas
+## 🎨 Características de UI
 
-### 1. Listado de Usuarios
-- Muestra tarjetas con avatar, nombre y email
-- Paginación funcional (navegación entre páginas)
-- Botón para crear nuevo usuario
-- Click en tarjeta para ver detalles
+### Roles Disponibles
+- **👑 Admin** - Color rojo
+- **💻 Developer** - Color azul
+- **🎨 Designer** - Color morado
 
-### 2. Detalle de Usuario
-- Muestra toda la información del usuario
-- Botón para editar usuario
-- Botón para eliminar usuario
-- Confirmación antes de eliminar
+### Temas
+- **Light** - Tema claro
+- **Dark** - Tema oscuro
+- **System** - Sigue la preferencia del sistema
 
-### 3. Crear/Editar Usuario
-- Formulario con validaciones:
-  - Nombre (mínimo 2 caracteres)
-  - Apellido (mínimo 2 caracteres)
-  - Email (formato válido)
-- Mensajes de error en tiempo real
-- Feedback visual de validación
+### Idiomas
+- **Español**
+- **English**
+- **Galego **
 
-## 🎨 Diseño
+## 🔑 Atajos de Teclado
 
-La aplicación cuenta con:
-- **Diseño responsive** que se adapta a diferentes tamaños de pantalla
-- **Gradientes modernos** y efectos visuales
-- **Animaciones suaves** en hover y transiciones
-- **Tarjetas con sombras** y efectos de elevación
-- **Paleta de colores** profesional (azul, púrpura, gris)
-- **Componentes reutilizables** con Tailwind CSS
+- `Ctrl+K` / `Cmd+K` - Abrir paleta de comandos
+- `Esc` - Cerrar paleta de comandos o diálogos
 
-## 🔌 API Utilizada
+## 🌐 Modo de Desarrollo
 
-La aplicación consume la API pública de [reqres.in](https://reqres.in/):
+Para trabajar sin conexión o sin API:
 
-- `GET /api/users?page={page}` - Listar usuarios con paginación
-- `GET /api/users/{id}` - Obtener usuario por ID
-- `POST /api/users` - Crear nuevo usuario
-- `PUT /api/users/{id}` - Actualizar usuario
-- `DELETE /api/users/{id}` - Eliminar usuario
+1. Configura `VITE_DEV_MODE=true` en `.env`
+2. Reinicia el servidor de desarrollo
+3. La aplicación usará datos mock automáticamente
+4. Verás un indicador "Dev Mode" en el header
 
-## 📝 Notas Adicionales
+## 📝 Notas Importantes
 
-- La API de reqres.in es una API de prueba que simula operaciones CRUD
-- Las operaciones de creación, actualización y eliminación retornan respuestas exitosas pero no persisten los datos
-- Los usuarios creados no aparecerán en el listado (limitación de la API de prueba)
-- La aplicación incluye manejo de errores y estados de carga
-
-## 👨‍💻 Desarrollo
-
-El proyecto utiliza:
-- **ESLint** para linting
-- **TypeScript** para type checking
-- **Vite** para hot module replacement (HMR)
-- **SWC** para compilación rápida de React
+- Los **roles se almacenan en localStorage** del navegador
+- La **paginación** está limitada por la API de ReqRes
+- El **token API** es opcional para ReqRes (la API es pública)
+- Los **datos mock** incluyen operaciones CRUD completas
 
 ## 📄 Licencia
 
-Este proyecto fue desarrollado como prueba técnica.
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 🙏 Agradecimientos
+
+- [ReqRes](https://reqres.in/) - API REST de prueba
+- [shadcn/ui](https://ui.shadcn.com/) - Componentes UI
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
+- [Lucide](https://lucide.dev/) - Iconos

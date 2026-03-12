@@ -1,0 +1,148 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "cancel": "Cancelar",
+    "back": "Volver al listado",
+    "retry": "Reintentar"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "devMode": {
+    "label": "Modo Dev"
+  },
+  "roles": {
+    "admin": "Administrador",
+    "developer": "Desarrollador",
+    "designer": "Diseñador",
+    "selectRole": "Asignar Rol",
+    "currentRole": "Rol actual",
+    "assign": "Asignar",
+    "assigned": "Asignado"
+  },
+  "apiTokenError": {
+    "title": "Token API Requerido",
+    "subtitle": "Error de configuración - Por favor configura tu token API",
+    "missing": "Falta VITE_API_TOKEN",
+    "description": "La aplicación requiere un token API para comunicarse con el servicio backend. Este token debe estar configurado en tus variables de entorno.",
+    "howToFix": "Cómo solucionarlo:",
+    "step1": {
+      "title": "Abre el archivo .env",
+      "description": "Localiza el archivo .env en el directorio raíz de tu proyecto."
+    },
+    "step2": {
+      "title": "Añade tu token API",
+      "description": "Añade o actualiza la variable VITE_API_TOKEN con tu token API:"
+    },
+    "step3": {
+      "title": "Reinicia el servidor de desarrollo",
+      "description": "Detén y reinicia tu servidor de desarrollo para que los cambios surtan efecto."
+    },
+    "visitDocs": "Visitar documentación de ReqRes"
+  },
+  "errorBoundary": {
+    "title": "¡Vaya! Algo salió mal",
+    "subtitle": "Ocurrió un error inesperado en la aplicación",
+    "errorMessage": "Mensaje de error",
+    "unknownError": "Error desconocido",
+    "showDetails": "Mostrar detalles técnicos",
+    "hideDetails": "Ocultar detalles técnicos",
+    "stackTrace": "Traza de error",
+    "noStackTrace": "No hay traza de error disponible",
+    "suggestions": "Qué puedes hacer:",
+    "tryAgain": "Intentar de nuevo",
+    "goHome": "Ir al inicio",
+    "persistsMessage": "Si el problema persiste, contacta con soporte o inténtalo más tarde."
+  },
+  "commandPalette": {
+    "label": "Paleta de comandos",
+    "placeholder": "Buscar acciones, usuarios...",
+    "noResults": "No se encontraron resultados",
+    "quickActions": "Acciones rápidas",
+    "createUser": "Crear nuevo usuario",
+    "goHome": "Ir al inicio",
+    "users": "Usuarios",
+    "theme": "Tema",
+    "lightMode": "Modo claro",
+    "darkMode": "Modo oscuro",
+    "language": "Idioma",
+    "navigate": "Navegar",
+    "select": "Seleccionar",
+    "close": "Cerrar"
+  },
+  "userList": {
+    "title": "Usuarios",
+    "createUser": "Crear Usuario",
+    "filterByRole": "Filtrar por rol",
+    "allRoles": "Todos",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "previousPage": "Ir a la página anterior",
+    "nextPage": "Ir a la página siguiente",
+    "page": "Página",
+    "searchLabel": "Buscar usuarios por nombre o email",
+    "clearSearch": "Limpiar búsqueda",
+    "viewUser": "Ver usuario",
+    "errorLoading": "Error al cargar los usuarios",
+    "noUsers": "No hay usuarios",
+    "noUsersDescription": "No se encontraron usuarios. Comienza creando tu primer usuario.",
+    "searchPlaceholder": "Buscar por nombre o email...",
+    "noResults": "No se encontraron resultados",
+    "noResultsDescription": "No hay usuarios que coincidan con tu búsqueda. Intenta con otros términos."
+  },
+  "userDetail": {
+    "title": "Información del Usuario",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "previousUser": "Ir al usuario anterior",
+    "nextUser": "Ir al usuario siguiente",
+    "edit": "Editar Usuario",
+    "delete": "Eliminar Usuario",
+    "deleting": "Eliminando...",
+    "notFound": "Usuario no encontrado",
+    "fields": {
+      "id": "ID",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Email"
+    }
+  },
+  "userForm": {
+    "createTitle": "Crear Nuevo Usuario",
+    "editTitle": "Editar Usuario",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Email",
+    "firstNamePlaceholder": "Ingresa el nombre",
+    "lastNamePlaceholder": "Ingresa el apellido",
+    "emailPlaceholder": "ejemplo@email.com",
+    "required": "Este campo es obligatorio",
+    "minLength": "{{field}} debe tener al menos {{length}} caracteres",
+    "invalidEmail": "Email inválido",
+    "create": "Crear Usuario",
+    "update": "Actualizar Usuario",
+    "creating": "Creando...",
+    "updating": "Actualizando..."
+  },
+  "deleteDialog": {
+    "title": "Confirmar eliminación",
+    "description": "¿Estás seguro de que deseas eliminar a",
+    "warning": "Esta acción no se puede deshacer.",
+    "confirm": "Eliminar"
+  },
+  "toast": {
+    "userCreated": "Usuario creado correctamente. Nota: Esta es una API de prueba, el usuario no se ha guardado realmente.",
+    "userUpdated": "Usuario actualizado correctamente. Nota: Esta es una API de prueba, los cambios no se han guardado realmente.",
+    "userDeleted": "Usuario eliminado correctamente. Nota: Esta es una API de prueba, el usuario no se ha eliminado realmente.",
+    "errorCreate": "Error al crear el usuario",
+    "errorUpdate": "Error al actualizar el usuario",
+    "errorDelete": "Error al eliminar el usuario",
+    "errorLoad": "Error al cargar el usuario"
+  },
+  "errors": {
+    "rateLimitTitle": "Límite de peticiones alcanzado",
+    "rateLimitMessage": "Has alcanzado el límite de peticiones de la API pública. Por favor, espera unos minutos antes de volver a intentarlo.",
+    "rateLimitAction": "Visita ReqRes para obtener una clave API"
+  }
+}
