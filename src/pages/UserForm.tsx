@@ -173,12 +173,12 @@ const UserForm = () => {
               <RoleSelector userId={id && id !== 'new' ? parseInt(id) : 0} />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex gap-3 pt-4">
               <Button
                 type="submit"
                 disabled={isSubmitting || createMutation.isPending || updateMutation.isPending}
                 className="flex-1 transition-all"
-                size="lg"
+                size="xl"
               >
                 {isSubmitting || createMutation.isPending || updateMutation.isPending ? (
                   <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
@@ -199,7 +199,7 @@ const UserForm = () => {
                 disabled={isSubmitting || createMutation.isPending || updateMutation.isPending}
                 variant="outline"
                 className="flex-1"
-                size="lg"
+                size="xl"
               >
                 <X className="w-5 h-5" />
                 {t('common.cancel')}

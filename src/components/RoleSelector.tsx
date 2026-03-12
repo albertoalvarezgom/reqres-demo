@@ -86,21 +86,21 @@ export const RoleSelector = memo(function RoleSelector({
   return (
     <div className="space-y-2">
       <label className="text-sm font-medium text-muted-foreground">{t('roles.selectRole')}</label>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {roles.map(({ type, icon: Icon, label, color, activeColor }) => (
           <button
             key={type}
             onClick={() => handleRoleClick(type)}
             className={cn(
-              'flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-200',
+              'flex items-center gap-2 px-4 py-2.5 rounded-lg border transition-all duration-200 min-h-[44px]',
               selectedRole === type
                 ? `${activeColor} border-current`
                 : `${color} border-border hover:border-current`
             )}
             aria-label={`${label} ${selectedRole === type ? t('roles.assigned') : t('roles.assign')}`}
           >
-            <Icon className="w-5 h-5" />
-            <span className="text-sm font-medium">{label}</span>
+            <Icon className="w-5 h-5 flex-shrink-0" />
+            <span className="text-sm font-medium whitespace-nowrap">{label}</span>
           </button>
         ))}
       </div>

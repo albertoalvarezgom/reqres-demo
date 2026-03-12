@@ -31,7 +31,7 @@ const UserList = () => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [roleFilter, setRoleFilter] = useState<UserRole>(null);
+  const [roleFilter, setRoleFilter] = useState<UserRole[]>([]);
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
   const navigate = useNavigate();
 
@@ -67,9 +67,10 @@ const UserList = () => {
     }
 
     // Apply role filter
-    if (roleFilter) {
+    if (roleFilter.length > 0) {
       filtered = filtered.filter((user: { id: number }) => {
-        return roleStorage.getUserRole(user.id) === roleFilter;
+        const userRole = roleStorage.getUserRole(user.id);
+        return userRole && roleFilter.includes(userRole);
       });
     }
 
@@ -197,43 +198,59 @@ const UserList = () => {
             )}
           </div>
 
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 w-full sm:w-auto">
             <span className="text-sm text-muted-foreground whitespace-nowrap">
               {t('userList.filterByRole')}:
             </span>
             <div className="flex gap-2 flex-wrap">
               <Button
-                variant={roleFilter === null ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setRoleFilter(null)}
+                variant={roleFilter.length === 0 ? 'default' : 'outline'}
+                size="default"
+                onClick={() => setRoleFilter([])}
+                className="min-h-[44px]"
               >
                 {t('userList.allRoles')}
               </Button>
               <Button
-                variant={roleFilter === 'admin' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setRoleFilter('admin')}
-                className={roleFilter === 'admin' ? 'bg-red-500 hover:bg-red-600' : ''}
+                variant={roleFilter.includes('admin') ? 'default' : 'outline'}
+                size="default"
+                onClick={() => {
+                  const newFilter: UserRole[] = roleFilter.includes('admin')
+                    ? roleFilter.filter((r) => r !== 'admin')
+                    : [...roleFilter, 'admin'];
+                  setRoleFilter(newFilter.length === 3 ? [] : newFilter);
+                }}
+                className={`min-h-[44px] ${roleFilter.includes('admin') ? 'bg-red-500 hover:bg-red-600' : ''}`}
               >
-                <Shield className="w-4 h-4 mr-1" />
+                <Shield className="w-4 h-4 mr-1.5 flex-shrink-0" />
                 {t('roles.admin')}
               </Button>
               <Button
-                variant={roleFilter === 'developer' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setRoleFilter('developer')}
-                className={roleFilter === 'developer' ? 'bg-blue-500 hover:bg-blue-600' : ''}
+                variant={roleFilter.includes('developer') ? 'default' : 'outline'}
+                size="default"
+                onClick={() => {
+                  const newFilter: UserRole[] = roleFilter.includes('developer')
+                    ? roleFilter.filter((r) => r !== 'developer')
+                    : [...roleFilter, 'developer'];
+                  setRoleFilter(newFilter.length === 3 ? [] : newFilter);
+                }}
+                className={`min-h-[44px] ${roleFilter.includes('developer') ? 'bg-blue-500 hover:bg-blue-600' : ''}`}
               >
-                <Code className="w-4 h-4 mr-1" />
+                <Code className="w-4 h-4 mr-1.5 flex-shrink-0" />
                 {t('roles.developer')}
               </Button>
               <Button
-                variant={roleFilter === 'designer' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setRoleFilter('designer')}
-                className={roleFilter === 'designer' ? 'bg-purple-500 hover:bg-purple-600' : ''}
+                variant={roleFilter.includes('designer') ? 'default' : 'outline'}
+                size="default"
+                onClick={() => {
+                  const newFilter: UserRole[] = roleFilter.includes('designer')
+                    ? roleFilter.filter((r) => r !== 'designer')
+                    : [...roleFilter, 'designer'];
+                  setRoleFilter(newFilter.length === 3 ? [] : newFilter);
+                }}
+                className={`min-h-[44px] ${roleFilter.includes('designer') ? 'bg-purple-500 hover:bg-purple-600' : ''}`}
               >
-                <Palette className="w-4 h-4 mr-1" />
+                <Palette className="w-4 h-4 mr-1.5 flex-shrink-0" />
                 {t('roles.designer')}
               </Button>
             </div>

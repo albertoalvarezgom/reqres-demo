@@ -197,8 +197,8 @@ const UserDetail = () => {
                 <RoleSelector userId={user.id} />
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                <Button onClick={handleEdit} className="flex-1" size="lg">
+              <div className="flex gap-3 pt-4">
+                <Button onClick={handleEdit} className="flex-1" size="xl">
                   <Edit className="w-5 h-5" />
                   {t('userDetail.edit')}
                 </Button>
@@ -207,7 +207,7 @@ const UserDetail = () => {
                   disabled={deleteMutation.isPending}
                   variant="destructive"
                   className="flex-1 transition-all"
-                  size="lg"
+                  size="xl"
                 >
                   {deleteMutation.isPending ? (
                     <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
